@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<title>Просмотр</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+</head>
+<body>
+
+  <header>
+    <div class="menu">
+      <input type="checkbox" id="burger-checkbox" class="burger-checkbox">
+      <label for="burger-checkbox" class="burger"></label>
+      <ul class="menu-list">
+          <li><a href="/" class="menu-item">Искать</a><li>
+          <li><a href="/all" class="menu-item">Смотреть всё</a><li>
+      </ul>
+    </div>
+    <h2 class="text">POS</h2></br>
+  </header>
+
+  <a href="{{ url_for('show_post', post_id=post[0]) }}">
+    <div class="opened_post">
+      <h1 class="text">{{ post[4] }}</h1>
+      <h2 class="text">Введение</h2>
+      <p style="margin: 20px;" class="text" >{{ post[7]  }}</p>
+      <h2 class="text">Основная часть</h2>
+      <p style="margin: 20px;" class="text" >{{ post[8]  }}</p>
+      <h2 class="text">Рефлексия</h2>
+      <p style="margin: 20px;" class="text" >{{ post[9]  }}</p>
+      <h2 class="text">Заключение</h2>
+      <p style="margin: 20px;" class="text" >{{ post[10]  }}</p>
+    </div>
+  </a>
+</body>
+</html>

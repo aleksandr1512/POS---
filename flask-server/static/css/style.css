@@ -1,0 +1,244 @@
+.form {
+    display: flex;
+    justify-content: center; /* Центрирует по горизонтали */
+    align-items: center;/* Центрирует по вертикали */
+    height: 100vh; /* Пример высоты для видимости вертикального центрирования */
+}
+
+h2 {
+    text-shadow: 0 0 10px #ffffff, 
+               0 0 20px #ffffff, 
+               0 0 40px #ffffff;
+    text-align: center;
+}
+
+form {
+    background-color: #3c3c3c;
+    width: 600px;
+    height:100%;
+    display: flex;
+    flex-direction: column; /* Элементы идут друг за другом */
+    align-items: center;   /* Горизонтальное центрирование */
+    gap: 5px; 
+}
+
+header {
+    display: flex;
+    align-items: center;
+    height: 6vh; 
+    background-color:  #000000;
+    border-radius: 15px;
+    gap: 20px;
+    padding: 5px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+
+}
+
+body {
+    background-color: #8bff65;
+}
+
+.text  {
+    font-family: "Google Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    font-variation-settings:
+    "GRAD" 200;
+    color: rgb(255, 255, 255);
+}
+
+.button {
+  appearance: none;
+  border: 0;
+  border-radius: 10px;
+  background: #7f7f7f;
+  color: #fff;
+  padding: 8px 35%;
+  font-size: 16px;
+  transition: all 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.button:hover {
+    background-color: #bbbbbb;
+    font-size: 20px;
+    text-shadow: 0 0 10px #ffffff, 
+               0 0 20px #ffffff, 
+               0 0 40px #ffffff;
+}
+
+.text-area {
+    border: 0;
+    border-radius: 10px;
+    padding: 8px;
+    font-size: 16px;
+    width: 550px;
+    transition: all 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+    font-family: "Google Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    font-variation-settings:
+    "GRAD" 200;
+}
+
+.text-area:hover {
+    font-size: 18px;
+}
+
+.burger-checkbox {
+  position: absolute;
+  visibility: hidden;
+}
+.burger {
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  border: none;
+  background: transparent;
+  width: 40px;
+  height: 26px;
+}
+.burger::before,
+.burger::after {
+  content: '';
+  left: 0;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 10px;
+  background: rgb(255, 255, 255);
+}
+.burger::before {
+  top: 0;
+  box-shadow: 0 11px 0 rgb(255, 255, 255);
+  transition: box-shadow .3s .15s, top .3s .15s, transform .3s;
+}
+.burger::after {
+  bottom: 0;
+  transition: bottom .3s .15s, transform .3s;
+}
+.burger-checkbox:checked + .burger::before {
+  top: 11px;
+  transform: rotate(45deg);
+  box-shadow: 0 6px 0 rgba(0,0,0,0);
+  transition: box-shadow .15s, top .3s, transform .3s .15s;
+}
+.burger-checkbox:checked + .burger::after {
+  bottom: 11px;
+  transform: rotate(-45deg);
+  transition: bottom .3s, transform .3s .15s;
+}
+.menu-list {
+  top: 0;
+  left:0;
+  position: fixed;
+  align-items: start;/* Центрирует по вертикали */ 
+  padding: 60px 0;
+  margin: 0;
+  background:#3c3c3c;
+  list-style-type: none;
+  transform: translateX(-100%);
+  transition: .3s;
+  width: 200px;
+  height: 100vh;
+}
+.menu-item {
+    display: block;
+    padding: 8px;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    font-family: "Google Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    font-variation-settings:
+    "GRAD" 200;
+    color: rgb(255, 255, 255);
+    height: 20px;
+    transition: all 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+}
+.menu-item:hover {
+  background: rgba(255,255,255,.2);
+  font-size: 20px;
+  text-shadow: 0 0 10px #ffffff, 
+               0 0 20px #ffffff, 
+               0 0 40px #ffffff;
+}
+.burger-checkbox:checked ~ .menu-list {
+  transform: translateX(0);
+}
+
+.post {
+    background-color: #3c3c3c;
+    height: 300px;
+    margin: 0 auto;
+    width: 95%;
+    transition: all 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+    border-radius: 10px;
+}
+
+
+.post:hover {
+    height: 330px;
+    width: 99%;
+    background-color: #5f5f5f;
+    border-radius: 15px;
+    text-shadow: 0 0 10px #ffffff, 
+               0 0 20px #ffffff, 
+               0 0 40px #ffffff;
+}
+
+h1 {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+li {
+    font-size: 16px;
+    transition: all 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+li:hover {
+    font-size: 18px;
+    text-shadow: 0 0 10px #ffffff, 
+               0 0 20px #ffffff, 
+               0 0 40px #ffffff;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.area {
+   transition: all 0.2s cubic-bezier(0.33, 1, 0.68, 1); 
+   width: 100%;
+   display: flex;
+   align-items: center; 
+   flex-direction: column;
+}
+
+.area:hover {
+    text-shadow: 0 0 10px #ffffff, 
+               0 0 20px #ffffff, 
+               0 0 40px #ffffff; 
+}
+
+#opened_post {
+    background-color: #3c3c3c;
+    height: 100vh;
+    margin: 0 auto;
+    width: 95%; 
+    border-radius: 10px;
+}

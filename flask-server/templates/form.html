@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<title>Поиск</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+</head>
+<body>
+  <header>
+    <div class="menu">
+      <input type="checkbox" id="burger-checkbox" class="burger-checkbox">
+      <label for="burger-checkbox" class="burger"></label>
+      <ul class="menu-list">
+          <li><a href="/" class="menu-item">Искать</a><li>
+          <li><a href="/all" class="menu-item">Смотреть всё</a><li>
+      </ul>
+    </div>
+    <h2 class="text">POS</h2></br>
+  </header>
+
+<div class="form">
+<form method="POST", action="/">
+    <p class="text">Тема:</p> 
+    <select class="text-area" type="string" name="theme">
+    {% for theme in parameters[0] %}
+      <option value={{ theme }} >{{ theme }}</option>
+    {% endfor %}
+      <option value="all">all</option>
+    </select>
+    <p class="text">Для:</p> 
+    <select class="text-area" type="string" name="who">
+    {% for who in parameters[1] %}
+      <option value={{ who }} >{{ who }}</option>
+    {% endfor %}
+      <option value="all">all</option>
+    </select>
+    <p class="text">Время:</p> 
+    <select class="text-area" type="int" name="time">
+    {% for time in parameters[2] %}
+      <option value={{ time }} >{{ time }} мин.</option>
+    {% endfor %}
+      <option value=0>all</option>
+    <input class="button" type="submit" value="Искать"/>
+</form>
+<p>Для проверяющих: сейчас не доступны другие категории так как в базе данных нет урока с другими  категориями.</p>
+</div>
+</body>
+</html>
